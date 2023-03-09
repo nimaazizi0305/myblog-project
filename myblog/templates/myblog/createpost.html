@@ -1,0 +1,70 @@
+{% extends "shared/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Blog Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+{% else %}
+<!DOCTYPE html>
+<html>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<head>
+	<title>
+		How to define a dialog
+		box or window?
+	</title>
+
+	<style>
+		dialog {
+			color: #428bca;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<dialog open>
+		you should be login for create post
+	</dialog>
+</body>
+
+</html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endif %}
+{% endblock content %}
+
